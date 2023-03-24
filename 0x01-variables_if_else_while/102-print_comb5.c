@@ -10,19 +10,19 @@
 
 int main(void)
 {
-	int p, q;
+	int c, d;
 
-	for (p = 0; p <= 98; p++)
+	for (c = 0; c <= 98; c++)
 	{
-		for (q = p + 1; q <= 99; q++)
+		for (d = c + 1; d <= 99; d++)
 		{
-			putchar((p / 10) + '0');
-			putchar((p % 10) + '0');
+			putchar((c / 10) + '0');
+			putchar((c % 10) + '0');
 			putchar(' ');
-			putchar((q / 10) + '0');
-			putchar((q % 10) + '0');
+			putchar((d / 10) + '0');
+			putchar((d % 10) + '0');
 
-			if (p == 98 && q == 99)
+			if (c == 98)
 				continue;
 
 			putchar(',');
