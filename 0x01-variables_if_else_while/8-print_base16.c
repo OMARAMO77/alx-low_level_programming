@@ -10,16 +10,16 @@
 
 int main(void)
 {
-	int d;
-	char low;
+	int c;
+	char alpha;
 
-	for (d = '0'; d <= '9'; d++)
+	for (c = '0'; c <= '9'; c++)
 	{
 		putchar(d);
 	}
-	for (low = 'a'; low <= 'f'; low++)
+	for (alpha = 'a'; alpha <= 'f'; alpha++)
 	{
-		putchar(low);
+		putchar(alpha);
 	}
 	putchar('\n');
 
