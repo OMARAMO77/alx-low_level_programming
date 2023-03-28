@@ -1,4 +1,4 @@
-#include "main.h"
+k#include "main.h"
 
 /**
   * puts2 - Prints every other character of a string
@@ -11,12 +11,15 @@ void puts2(char *str)
 	int n;
 	int m = 0;
 
-	for (; str[m] != '\0'; m++)
+	while (str[m] != '\0')
 	{
-		for (n = 0; i < m; n += 2)
-		{
-			_putchar(str[n]);
-		}
+		m++;
 	}
+
+	for (n = 0; i < m; n += 2)
+	{
+		_putchar(str[n]);
+	}
+
 	_putchar('\n');
 }
