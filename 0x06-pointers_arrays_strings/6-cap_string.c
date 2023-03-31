@@ -1,8 +1,7 @@
-#include "main.h"
 
 /**
-  * cap_string - Capitalizes all words of a string
-  * @s: input string to capitalize letters
+  * cap_string - ...
+  * @s: ...
   *
   * Return: char value
   */
@@ -10,7 +9,7 @@ char *cap_string(char *s)
 {
 	int a = 0, i;
 	int cspc = 13;
-	char spc[] = {' ', '\t', '\n', ',', ';', '.', '!', '?', '"', '(', ')', '{', '}'};
+	char spc[] = {32, '\t', '\n', 44, ';', 46, '!', '?', '"', '(', ')', '{', '}'};
 
 	while (s[a])
 	{
