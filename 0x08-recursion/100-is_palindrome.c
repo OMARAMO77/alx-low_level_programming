@@ -24,7 +24,7 @@ int _strlen_recursion(char *s)
 /**
  * helper_palindrome - helper
  * @s: string
- * @len: length
+ * @l: length
  *
  * Return: string
  */
