@@ -8,7 +8,7 @@
   * Return: 1 for prime or 0 otherwise
   */
 
-int checker(int n, int m);
+int checker(int n, int m)
 {
 	if (n <= 1)
 	{
