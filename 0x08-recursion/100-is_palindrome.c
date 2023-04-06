@@ -22,21 +22,6 @@ int _strlen_recursion(char *s)
 }
 
 /**
- * is_palindrome - checks if s is a palindrome string
- * @s: a string
- *
- * Return: 1 if is a string is a palindrome, 0 otherwise
- */
-
-int is_palindrome(char *s)
-{
-	int l;
-
-	l = _strlen_recursion(s);
-	return (helper_palindrome(s, l));
-}
-
-/**
  * helper_palindrome - helper
  * @s: string
  * @len: length
@@ -60,3 +45,17 @@ int helper_palindrome(char *s, int l)
 	}
 }
 
+/**
+ * is_palindrome - checks if s is a palindrome string
+ * @s: a string
+ *
+ * Return: 1 if is a string is a palindrome, 0 otherwise
+ */
+
+int is_palindrome(char *s)
+{
+	int l;
+
+	l = _strlen_recursion(s);
+	return (helper_palindrome(s, l));
+}
