@@ -14,11 +14,11 @@ int checker(int n, int m)
 	{
 		return (0);
 	}
-	else if (n % m == 0 && m != 1)
+	else if (n % m == 0 && m != 1 && m != n)
 	{
 		return (0);
 	}
-	else if (n % m == 0 && m ==n)
+	else if (n % m == 0 && m == n)
 	{
 		return (1);
 	}
