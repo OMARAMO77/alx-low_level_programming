@@ -8,7 +8,7 @@
  *
  * Return: Always 0 (Success)
  */
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
 	int n, m;
 
@@ -17,7 +17,7 @@ int main(int argc, char **argv)
 		n = atoi(argv[1]);
 		m = atoi(argv[2]);
 		printf("%d\n", n * m);
-		return (0);		
+		return (0);
 	}
 	else
 	{
