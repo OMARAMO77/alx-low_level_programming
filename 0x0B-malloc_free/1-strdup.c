@@ -2,8 +2,8 @@
 #include <stdlib.h>
 
 /**
- * _strdup - A function that returns a pointer to a newly allocated space 
- *in memory, which contains a copy of the string given as a parameter.
+ * _strdup - A function that returns a pointer to a newly allocated space
+ * in memory, which contains a copy of the string given as a parameter.
  * @str: An input pointer of the string to copy.
  *
  * Return: A pointer to to the duplicated string or NULL if it str is NULL
