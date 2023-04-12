@@ -30,13 +30,17 @@ char *str_concat(char *s1, char *s2)
 	{
 		b++;
 	}
+
 	d = a + b;
 	s = malloc((sizeof(char) * d) + 1);
+
 	if (s == NULL)
 	{
 		return (NULL);
 	}
+
 	b = 0;
+
 	while (c < d)
 	{
 		if (c <= a)
