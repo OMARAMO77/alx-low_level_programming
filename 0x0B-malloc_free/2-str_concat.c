@@ -2,11 +2,13 @@
 #include <stdlib.h>
 
 /**
- * strtow - A function that splits a string into words
- * @str: An input pointer of the string to split
+ * str_concat - Concatenates two strings
+ * @s1: The first string
+ * @s2: The second string
  *
- * Return: Apointer to concatened strings or NULL if it str is NULL
+ * Return: Two concatened strings or NULL on failure
  */
+
 char *str_concat(char *s1, char *s2)
 {
 	int a = 0, b = 0, c = 0, d = 0;
@@ -48,7 +50,6 @@ char *str_concat(char *s1, char *s2)
 		}
 		c++;
 	}
-
 	s[c] = '\0';
 	return (s);
 }
