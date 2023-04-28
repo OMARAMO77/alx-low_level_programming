@@ -24,7 +24,7 @@ list_t *add_node(list_t **head, const char *str)
 
 /**
   * _strlen - Returns the length of a string
-  * @str: String to count
+  * @s: String to count
   *
   * Return: String length
   */
