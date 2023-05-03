@@ -14,7 +14,7 @@ size_t print_listint_safe(const listint_t *head)
 	size_t node_counter = 0;
 	const listint_t *first = head, *seconde = head;
 
-	if (!head)
+	if (head == NULL)
 		exit(98);
 
 	while (first && seconde && seconde->next && head)
