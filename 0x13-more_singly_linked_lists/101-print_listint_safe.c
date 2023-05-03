@@ -2,7 +2,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void free_newlist(newlist_t **head);
 /**
  * print_listint_safe - prints a listint_t linked list
  * @head: head of the linked list
