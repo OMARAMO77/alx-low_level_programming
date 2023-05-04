@@ -28,6 +28,8 @@ size_t free_listint_safe(listint_t **h)
  * @head: A pointer to the listint_t structure
  * Return: Nothing
  */
+
+void free_temp_list(listint_t *head);
 void free_temp_list(listint_t *head)
 {
 	listint_t *temp_node;
