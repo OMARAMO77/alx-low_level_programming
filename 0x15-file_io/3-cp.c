@@ -27,9 +27,12 @@ int main(int argc, char **argv)
 	fdr = read(fdfrom, buffer, 1024);
 	if (fdr == -1)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]), exit(98);
-	fdw = write(fdto, buffer, fdr);
-	if (fdw == -1)
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]), exit(99);
+	if (fdr)
+	{
+		fdw = write(fdto, buffer, fdr);
+		if (fdw == -1)
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]), exit(99);
+	}
 	fdfromc = close(fdfrom);
 	if (fdfromc == -1)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fdfrom), exit(100);
