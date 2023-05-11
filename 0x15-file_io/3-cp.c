@@ -11,7 +11,7 @@ int error_close(int);
 int main(int argc, char *argv[])
 {
 	char buff[1024];
-	int _EOF = 1, file_from = -1, file_to = -1, error = 0;
+	int _EOF = 1, file_from, file_to, error;
 
 	if (argc != 3)
 	{
