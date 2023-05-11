@@ -10,41 +10,23 @@
 
 int create_file(const char *filename, char *text_content)
 {
-	int wr, fd;
-	int lenght = _strlen(text_content);
+	int fd, rw;
+	int lenght = 0;
 
-	if (!filename)
+	if (filename == NULL)
 		return (-1);
 
-	fd = open(filename, O_RDWR | O_CREAT, 0600);
+	fd = open(filename, O_RDWR | O_CREAT | O_TRUNC, 0600);
 	if (fd == -1)
 		return (-1);
 
-	if (text_content)
+	while (text_content && *(text_content + lenght))
 	{
-		wr = write(fd, text_content, lenght);
-		if (wr == -1)
-		{
-			close(fd);
-			return (-1);
-		}
+		lenght++;
 	}
+	rw = write(fd, text_content, lenght);
 	close(fd);
+	if (rw == -1)
+		return (-1);
 	return (1);
-}
-
-/**
-  * _strlen - returns the length of a string
-  * @s: string
-  *
-  * Return: length of the string
-  */
-
-int _strlen(char *s)
-{
-	int len = 0;
-
-	while (*s)
-		len++;
-	return (len);
 }
