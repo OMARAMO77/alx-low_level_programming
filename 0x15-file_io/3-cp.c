@@ -11,7 +11,7 @@ int error_close(int);
 int main(int argc, char *argv[])
 {
 	char buff[1024];
-	int _EOF = 1, file_from, file_to, error;
+	int fdr = 1, fdfrom, fdto, fdw, error;
 
 	if (argc != 3)
 	{
@@ -19,50 +19,50 @@ int main(int argc, char *argv[])
 		exit(97);
 	}
 
-	file_from = open(argv[1], O_RDONLY);
-	if (file_from < 0)
+	fdfrom = open(argv[1], O_RDONLY);
+	if (fdfrom < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
 
-	file_to = open(argv[2], O_WRONLY | O_TRUNC | O_CREAT,
+	fdto = open(argv[2], O_WRONLY | O_TRUNC | O_CREAT,
 		S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
-	if (file_to < 0)
+	if (fdto < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-		error_close(file_from);
+		error_close(fdfrom);
 		exit(99);
 	}
 
-	while (_EOF)
+	while (fdr)
 	{
-		_EOF = read(file_from, buff, 1024);
-		if (_EOF < 0)
+		fdr = read(fdfrom, buff, 1024);
+		if (fdr < 0)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-			error_close(file_from);
-			error_close(file_to);
+			error_close(fdfrom);
+			error_close(fdto);
 			exit(98);
 		}
-		else if (_EOF == 0)
+		else if (fdr == 0)
 			break;
-		error = write(file_to, buff, _EOF);
-		if (error < 0)
+		fdw = write(fdto, buff, fdr);
+		if (fdw < 0)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-			error_close(file_from);
-			error_close(file_to);
+			error_close(fdfrom);
+			error_close(fdto);
 			exit(99);
 		}
 	}
-	error = error_close(file_to);
+	error = error_close(fdto);
 	if (error < 0)
 	{
-		error_close(file_from);
+		error_close(fdfrom);
 		exit(100);
 	}
-	error = error_close(file_from);
+	error = error_close(fdfrom);
 	if (error < 0)
 		exit(100);
 	return (0);
