@@ -11,7 +11,7 @@ int error_close(int);
 int main(int argc, char *argv[])
 {
 	char buff[1024];
-	int bytes_read = 0, _EOF = 1, file_from = -1, file_to = -1, error = 0;
+	int _EOF = 1, file_from = -1, file_to = -1, error = 0;
 
 	if (argc != 3)
 	{
@@ -47,7 +47,6 @@ int main(int argc, char *argv[])
 		}
 		else if (_EOF == 0)
 			break;
-		bytes_read += _EOF;
 		error = write(file_to, buff, _EOF);
 		if (error < 0)
 		{
