@@ -3,8 +3,8 @@
 int error_close(int);
 /**
  * main - copies the content of a file to another file
- * @argc: argument counter
- * @argv: argument vector
+ * @argc: arguments counter
+ * @argv: arguments vector
  *
  * Return: 1 on success, exits on failure
  */
